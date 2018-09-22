@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
-import { createReactNavigationReduxMiddleware } from "react-navigation-redux-helpers";
+
+import Config from "../Config/DebugConfig";
 
 // creates the store
 export default (rootReducer, rootSaga) => {
@@ -12,18 +13,22 @@ export default (rootReducer, rootSaga) => {
   // TODO: React Navigation Middleware
 
   /* ------------- Saga Middleware ------------- */
-  // TODO: Reactotron in saga
 
-  const sagaMiddleware = createSagaMiddleware();
+  const sagaMonitor = Config.useReactotron
+    ? console.tron.createSagaMonitor()
+    : null;
+  const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
   middleware.push(sagaMiddleware);
+
   /* ------------- Assemble Middleware ------------- */
 
   enhancers.push(applyMiddleware(...middleware));
 
-  /* ------------- Create Store ------------- */
-  // TODO : Reactotron
-
-  const store = createStore(rootReducer, compose(...enhancers));
+  // if Reactotron is enabled (default for __DEV__), we'll create the store through Reactotron
+  const createAppropriateStore = Config.useReactotron
+    ? console.tron.createStore
+    : createStore;
+  const store = createAppropriateStore(rootReducer, compose(...enhancers));
 
   // TODO: Redux persist
 

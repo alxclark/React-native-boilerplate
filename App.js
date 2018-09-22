@@ -1,18 +1,13 @@
-import React from "react";
+import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { Provider } from "react-redux";
+import Expo from "expo";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Test</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
+import createStore from "./App/Redux/index";
+import DebugConfig from "./App/Config/DebugConfig";
+import "./App/Config/ReactotronConfig";
+
+const store = createStore();
 
 const styles = StyleSheet.create({
   container: {
@@ -22,3 +17,25 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+class App extends Component {
+  render() {
+    console.tron.log(store.getState());
+    return (
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Text>Open up App.js to start working on your app!</Text>
+          <Text>Test allo</Text>
+          <Text>Changes you make will automatically reload.</Text>
+          <Text>Shake your phone to open the developer menu.</Text>
+        </View>
+      </Provider>
+    );
+  }
+}
+
+// allow reactotron overlay for fast design in dev mode
+export default (DebugConfig.useReactotron
+  ? console.tron.overlay(App)
+  : Expo.registerRootComponent(App));
+//export default App;
