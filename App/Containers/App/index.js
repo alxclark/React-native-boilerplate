@@ -5,33 +5,25 @@ import { Provider } from "react-redux";
 import createStore from "../../Redux/index";
 import DebugConfig from "../../Config/DebugConfig";
 
-const store = createStore();
+import StyledText from "./styled--Text";
+import StyledView from "./styled--View";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  }
-});
+const store = createStore();
 
 class App extends Component {
   render() {
     console.tron.log(store.getState());
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <Text>Open up App.js to start working on your app!</Text>
-          <Text>Test allo</Text>
-          <Text>Changes you make will automatically reload.</Text>
-          <Text>Shake your phone to open the developer menu.</Text>
-        </View>
+        <StyledView>
+          <StyledText>Open up App.js to start working on your app!</StyledText>
+          <StyledText>Test allo</StyledText>
+          <StyledText>Changes you make will automatically reload.</StyledText>
+          <StyledText>Shake your phone to open the developer menu.</StyledText>
+        </StyledView>
       </Provider>
     );
   }
 }
 
-// allow reactotron overlay for fast design in dev mode
 export default (DebugConfig.useReactotron ? console.tron.overlay(App) : App);
-//export default App;
