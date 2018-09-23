@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Provider } from "react-redux";
-import Expo from "expo";
 
-import createStore from "./App/Redux/index";
-import DebugConfig from "./App/Config/DebugConfig";
-import "./App/Config/ReactotronConfig";
+import createStore from "../../Redux/index";
+import DebugConfig from "../../Config/DebugConfig";
 
 const store = createStore();
 
