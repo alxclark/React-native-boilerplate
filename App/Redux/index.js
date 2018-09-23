@@ -4,7 +4,7 @@ import rootSaga from "../Sagas/";
 
 /* ------------- Assemble The Reducers ------------- */
 export const reducers = combineReducers({
-  app: require("../Containers/App/reducer").default
+  global: require("../Containers/App/reducer").default
 });
 
 export default () => {
