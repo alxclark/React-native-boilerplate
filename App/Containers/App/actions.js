@@ -1,7 +1,7 @@
-import { ADD_TODO } from "./constants";
+import { INCREMENT_COUNTER } from "./constants";
 
-export function addTodo() {
+export function incrementCounter() {
   return {
-    type: ADD_TODO
+    type: INCREMENT_COUNTER
   };
 }

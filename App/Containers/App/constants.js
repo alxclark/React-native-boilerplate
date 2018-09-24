@@ -1,1 +1,1 @@
-export const ADD_TODO = "[App] LOAD_REPOS";
+export const INCREMENT_COUNTER = "[App] INCREMENT_COUNTER";

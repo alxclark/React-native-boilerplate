@@ -1,17 +1,15 @@
 import { fromJS } from "immutable";
 
-import { ADD_TODO } from "./constants";
+import { INCREMENT_COUNTER } from "./constants";
 
-// The initial state of the App
 const initialState = fromJS({
-  index: 2
+  counter: 0
 });
 
 export default function AppReducer(state = initialState, action) {
   switch (action.type) {
-    case ADD_TODO:
-      console.tron.log("YES");
-      return state;
+    case INCREMENT_COUNTER:
+      return state.update("counter", counter => counter + 1);
     default:
       return state;
   }
