@@ -29,3 +29,4 @@ React native boilerplate inspired by [react-boilerplate](https://github.com/reac
 4. i18n
 5. Generators ?
 6. Storybook ?
+7. Sanitize.css ?
