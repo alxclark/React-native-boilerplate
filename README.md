@@ -20,13 +20,12 @@ React native boilerplate inspired by [react-boilerplate](https://github.com/reac
 1. Work on sagas
 2. Testing examples
   1. Basic test for component
-  2. Test a reducer
-  3. Test an action
+  2. ~~Test a reducer~~
+  3. ~~Test an action~~
   4. Test a saga
-  5. Test a selector
+  5. ~~Test a selector~~
   6. Snapshots ? (Not sure yet)
 3. Navigation (Redux + application)
 4. i18n
 5. Generators ?
 6. Storybook ?
-7. Sanitize.css ?

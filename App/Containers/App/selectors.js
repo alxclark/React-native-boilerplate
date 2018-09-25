@@ -7,4 +7,4 @@ const selectGlobal = state => {
 const makeSelectCounter = () =>
   createSelector(selectGlobal, globalState => globalState.get("counter"));
 
-export { makeSelectCounter };
+export { selectGlobal, makeSelectCounter };
