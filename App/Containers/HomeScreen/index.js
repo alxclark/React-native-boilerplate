@@ -27,11 +27,9 @@ class HomeScreen extends Component {
   }
 }
 
-export function mapDispatchToProps(dispatch) {
-  return {
-    onIncrementCounter: () => dispatch(incrementCounter())
-  };
-}
+const mapDispatchToProps = dispatch => ({
+  onIncrementCounter: () => dispatch(incrementCounter())
+});
 
 const mapStateToProps = createStructuredSelector({
   counter: makeSelectCounter()
