@@ -7,6 +7,8 @@
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "babel-eslint": "^8.2.6",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^4.0.0",
     "jest-expo": "~27.0.0",
     "react-native-scripts": "1.14.0",
@@ -31,7 +33,10 @@
     "testPathIgnorePatterns": [
       "/node_modules/"
     ],
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFiles": [
+      "<rootDir>/App/Testing/enzyme-adapter.js"
+    ]
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
