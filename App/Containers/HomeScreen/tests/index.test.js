@@ -1,24 +1,23 @@
-/**
- * Test the HomePage
- */
-
+import "react-native";
 import React from "react";
 
-import { mapDispatchToProps } from "../index";
+import renderer from "react-test-renderer";
 
+import { HomeScreen, mapDispatchToProps } from "../index";
 import { incrementCounter } from "../../App/actions";
 
 describe("<HomeScreen />", () => {
-  // it('should render the repos list', () => {
-  //   const renderedComponent = shallow(
-  //     <HomePage loading error={false} repos={[]} />,
-  //   );
-  //   expect(
-  //     renderedComponent.contains(
-  //       <ReposList loading error={false} repos={[]} />,
-  //     ),
-  //   ).toEqual(true);
-  // });
+  it("should render correctly", () => {
+    const tree = renderer
+      .create(
+        <HomeScreen
+          counter={0}
+          onIncrementCounter={() => console.log("test function")}
+        />
+      )
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
   describe("mapDispatchToProps", () => {
     describe("onIncrementCounter", () => {

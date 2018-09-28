@@ -10,7 +10,7 @@ import { incrementCounter } from "../App/actions";
 import StyledText from "./styled--Text";
 import StyledView from "./styled--View";
 
-class HomeScreen extends Component {
+export class HomeScreen extends Component {
   render() {
     const { counter, onIncrementCounter } = this.props;
     return (
@@ -21,7 +21,7 @@ class HomeScreen extends Component {
           title={counter.toString()}
           color="white"
         />
-        <StyledText>Press on this button to increment the counter</StyledText>
+        <StyledText>{"Press on button to increment the counter"}</StyledText>
       </StyledView>
     );
   }

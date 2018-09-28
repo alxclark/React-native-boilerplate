@@ -18,14 +18,15 @@ React native boilerplate inspired by [react-boilerplate](https://github.com/reac
 #### TODO List :
 
 1. Work on sagas
-2. Testing examples
-  1. Basic test for component
-  2. ~~Test a reducer~~
-  3. ~~Test an action~~
-  4. Test a saga
-  5. ~~Test a selector~~
-  6. Snapshots ? (Not sure yet)
-3. Navigation (Redux + application)
-4. i18n
-5. Generators ?
-6. Storybook ?
+2. Test a saga 
+3. Test a style-component
+4. Navigation (Redux + application)
+5. i18n
+6. ~~Testing examples~~
+7. ~~Basic test for component~~
+8. ~~Test a reducer~~
+9. ~~Test an action~~
+10. ~~Test a selector~~
+11. ~~Snapshots~~
+12. Generators ?
+13. Storybook ?
