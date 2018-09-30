@@ -29,4 +29,4 @@ React native boilerplate inspired by [react-boilerplate](https://github.com/reac
 10. ~~Test a selector~~
 11. ~~Snapshots~~
 12. Generators ?
-13. Storybook ?
+13. ~Storybook~
