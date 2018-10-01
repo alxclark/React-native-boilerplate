@@ -1,11 +1,16 @@
 import { combineReducers } from "redux-immutable";
-
+import { createNavigationReducer } from "react-navigation-redux-helpers";
 import configureStore from "./createStore";
 import rootSaga from "../Sagas/";
+import { RootNavigator } from "../Navigation/AppNavigator";
 
 /* ------------- Assemble The Reducers ------------- */
+
+const navReducer = createNavigationReducer(RootNavigator);
+
 export const reducers = combineReducers({
-  global: require("../Containers/App/reducer").default
+  global: require("../Containers/App/reducer").default,
+  nav: navReducer
 });
 
 export default () => {

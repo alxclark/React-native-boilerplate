@@ -1,7 +1,9 @@
 import { createStore, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
+import { createReactNavigationReduxMiddleware } from "react-navigation-redux-helpers";
 
 import Config from "../Config/DebugConfig";
+import { NavigatorMiddleware } from "../Navigation/AppNavigator";
 
 // creates the store
 export default (rootReducer, rootSaga) => {
@@ -10,7 +12,9 @@ export default (rootReducer, rootSaga) => {
   const middleware = [];
   const enhancers = [];
 
-  // TODO: React Navigation Middleware
+  /* ------------- React Navigation ------------ */
+
+  middleware.push(NavigatorMiddleware);
 
   /* ------------- Saga Middleware ------------- */
 

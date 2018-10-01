@@ -4,18 +4,18 @@ import { ThemeProvider } from "styled-components";
 
 import createStore from "../../Redux/index";
 import DebugConfig from "../../Config/DebugConfig";
-
-import HomeScreen from "../HomeScreen/index";
 import { Theme } from "../../Styles/theme";
+import { AppNavigator } from "../../Navigation/AppNavigator";
 
 const store = createStore();
 
 class App extends Component {
   render() {
+    console.tron.log(store.getState());
     return (
       <ThemeProvider theme={Theme}>
         <Provider store={store}>
-          <HomeScreen />
+          <AppNavigator />
         </Provider>
       </ThemeProvider>
     );
